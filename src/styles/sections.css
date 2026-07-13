@@ -433,3 +433,76 @@ ABOUT
     margin-bottom: .5rem;
     color: var(--accent);
 }
+
+/*==================================
+TESTIMONIALS
+==================================*/
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial-card {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: .35s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: .35rem;
+    color: #FFD54A;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-review {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.testimonial-author h4 {
+    margin-bottom: .25rem;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.testimonial-profile {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.testimonial-profile img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.company-logo {
+    width: 50px;
+    opacity: .8;
+}
+
+.testimonial-card a {
+    margin-top: 2rem;
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    font-weight: 600;
+    color: var(--accent);
+}
