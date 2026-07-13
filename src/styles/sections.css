@@ -12,19 +12,6 @@
     overflow: hidden;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: var(--primary);
-    filter: blur(180px);
-    opacity: .15;
-    top: -250px;
-    right: -250px;
-    z-index: -1;
-}
-
 .hero-content h1 {
     margin: 1.5rem 0;
 }
@@ -37,17 +24,11 @@
 
 .hero-badge {
     display: inline-block;
-
     padding: .5rem 1rem;
-
     border: 1px solid var(--border);
-
     border-radius: 999px;
-
     color: var(--accent);
-
     background: rgba(255, 255, 255, .03);
-
     font-size: .9rem;
 }
 
@@ -294,4 +275,117 @@ PORTFOLIO
 
 .portfolio-image:hover::after {
     opacity: 1;
+}
+
+/*====================================
+PROCESS TIMELINE
+====================================*/
+
+#process {
+    position: relative;
+    overflow: hidden;
+}
+
+#process::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -250px;
+    bottom: -250px;
+    border-radius: 50%;
+    background: var(--primary);
+    filter: blur(180px);
+    opacity: .08;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 38px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: linear-gradient(90deg,
+            var(--primary),
+            var(--accent));
+    z-index: 0;
+}
+
+.process-node {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+}
+
+.process-circle {
+    width: 78px;
+    height: 78px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,
+            var(--primary),
+            var(--accent));
+    border: 6px solid var(--background);
+    color: white;
+    transition: .35s ease;
+}
+
+.process-node:hover .process-circle {
+    transform: translateY(-8px) scale(1.08);
+    box-shadow: 0 20px 50px rgba(91, 95, 255, .35);
+}
+
+.process-step-number {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: .85rem;
+}
+
+.process-node h3 {
+    margin: 1rem 0 .75rem;
+}
+
+.process-node p {
+    max-width: 210px;
+    margin: auto;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .timeline-line {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        height: auto;
+    }
+
+    .process-node p {
+        max-width: 320px;
+    }
+
 }

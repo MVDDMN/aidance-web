@@ -12,6 +12,10 @@ export const navigation = [
         href: "#portfolio",
     },
     {
+        label: "Procedures",
+        href: "#process",
+    },
+    {
         label: "About",
         href: "#about",
     },
