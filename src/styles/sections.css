@@ -389,3 +389,47 @@ PROCESS TIMELINE
     }
 
 }
+
+/*==================================
+ABOUT
+==================================*/
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-block {
+    margin-bottom: 2.5rem;
+}
+
+.about-block h3 {
+    margin-bottom: 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    text-align: center;
+    transition: .35s;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+}
+
+.stat-card h2 {
+    font-size: 2.4rem;
+    margin-bottom: .5rem;
+    color: var(--accent);
+}
