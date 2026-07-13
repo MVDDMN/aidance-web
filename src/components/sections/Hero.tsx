@@ -9,7 +9,7 @@ export default function Hero() {
                     <span className="hero-badge">
                         Digital Marketing • Web Design • Growth
                     </span>
-
+                    
                     <h1>
                         Helping Businesses Grow
                         <span className="gradient-text"> With Modern Websites</span>

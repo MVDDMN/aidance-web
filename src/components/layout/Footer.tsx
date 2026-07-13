@@ -1,5 +1,6 @@
 import Button from "../common/Button";
 import { navigation } from "../../config/navigation";
+import { siteConfig } from "../../config/site";
 
 export default function Footer() {
     return (
@@ -52,7 +53,9 @@ export default function Footer() {
 
             <div className="footer-bottom">
 
-                © 2026 Aidance Agency. All Rights Reserved.
+                © {siteConfig.company.founded}
+                {" "}
+                {siteConfig.company.legalName}
 
             </div>
         </footer>
