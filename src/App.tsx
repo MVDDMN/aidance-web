@@ -5,6 +5,7 @@ import Services from "./components/sections/Services";
 import Portfolio from "./components/sections/Portfolio";
 import Process from "./components/sections/Process";
 import About from "./components/sections/About";
+import Testimonials from "./components/sections/Testimonials";
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
       <Process />
 
       <About />
+
+      <Testimonials />
 
     </PageLayout>
 
