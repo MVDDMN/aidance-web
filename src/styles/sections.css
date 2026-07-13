@@ -216,73 +216,82 @@ PORTFOLIO
 ==============================*/
 
 .portfolio-grid {
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 2rem;
-
 }
 
 .portfolio-image {
-
     height: 220px;
-
     overflow: hidden;
-
     border-radius: 14px;
-
     margin-bottom: 1.5rem;
-
 }
 
 .portfolio-image img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     transition: .4s;
-
 }
 
 .portfolio-image:hover img {
-
     transform: scale(1.05);
-
 }
 
 .tech-stack {
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: .5rem;
-
     margin: 1.5rem 0;
-
 }
 
 .tech-stack span {
-
-    padding: .35rem .8rem;
-
-    background: #ffffff08;
-
+    padding: .45rem .9rem;
     border-radius: 999px;
-
-    font-size: .85rem;
-
+    background: rgba(91, 95, 255, .12);
+    border: 1px solid rgba(91, 95, 255, .35);
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 500;
 }
 
 .portfolio-content a {
-
     color: var(--accent);
-
     font-weight: 600;
+}
 
+.portfolio-card {
+    transition: .35s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-card:hover .browser-frame {
+    border-color: var(--primary);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image::after {
+    content: "View Project";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .45);
+    color: white;
+    font-weight: 600;
+    opacity: 0;
+    transition: .3s;
+}
+
+.portfolio-image:hover::after {
+    opacity: 1;
 }
