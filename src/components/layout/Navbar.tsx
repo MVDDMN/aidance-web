@@ -1,16 +1,16 @@
 import Button from "../common/Button";
 import { navigation } from "../../config/navigation";
+import { siteConfig } from "../../config/site";
 
 export default function Navbar() {
     return (
         <header className="navbar">
             <div className="navbar-container">
 
-                <a
-                    href="#home"
-                    className="logo"
-                >
-                    Aidance
+                <a className="logo">
+
+                    {siteConfig.company.name}
+
                 </a>
 
                 <nav>

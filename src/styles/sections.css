@@ -506,3 +506,77 @@ TESTIMONIALS
     font-weight: 600;
     color: var(--accent);
 }
+
+
+/*==================================
+CONTACT
+==================================*/
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.contact-item svg {
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: .25rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-form input,
+
+.contact-form textarea,
+
+.contact-form select {
+    padding: 1rem 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font: inherit;
+    transition: .3s ease;
+}
+
+.contact-form input:focus,
+
+.contact-form textarea:focus,
+
+.contact-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(91, 95, 255, .15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+.contact-form button {
+    margin-top: .5rem;
+    align-self: flex-start;
+}
