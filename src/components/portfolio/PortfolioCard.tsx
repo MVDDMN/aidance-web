@@ -1,4 +1,5 @@
 import Card from "../common/Card";
+import BrowserFrame from "../common/BrowserFrame";
 
 interface Props {
     title: string;
@@ -24,14 +25,18 @@ export default function PortfolioCard({
 
         <Card>
 
-            <div className="portfolio-image">
+            <BrowserFrame title={title}>
 
-                <img
-                    src={image}
-                    alt={title}
-                />
+                <div className="portfolio-image">
 
-            </div>
+                    <img
+                        src={image}
+                        alt={title}
+                    />
+
+                </div>
+
+            </BrowserFrame>
 
             <div className="portfolio-content">
 

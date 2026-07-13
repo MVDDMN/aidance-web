@@ -1,0 +1,46 @@
+/*================================
+BROWSER FRAME
+================================*/
+
+.browser-frame {
+    background: var(--surface);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: .35s ease;
+}
+
+.browser-frame:hover {
+    transform: translateY(-8px);
+}
+
+.browser-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background: #ffffff08;
+}
+
+.browser-controls {
+    display: flex;
+    gap: .5rem;
+}
+
+.browser-controls span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff35;
+}
+
+.browser-address {
+    font-size: .85rem;
+    color: var(--text-secondary);
+}
+
+.browser-content {
+    background: #08111f;
+}

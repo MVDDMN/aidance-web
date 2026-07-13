@@ -1,44 +1,46 @@
 import type { Portfolio } from "../types/Portfolio";
 
+import construction from "../assets/portfolio/construction.webp";
+import restaurant from "../assets/portfolio/restaurant.webp";
+import lawFirm from "../assets/portfolio/law-firm.webp";
+
 export const portfolio: Portfolio[] = [
     {
         title: "Construction Company",
         category: "Website Redesign",
         description:
-            "A modern business website focused on lead generation.",
+            "Modern business website designed to generate qualified leads.",
         technologies: [
             "Squarespace",
             "SEO",
-            "Responsive"
+            "Responsive",
         ],
-        image: "/portfolio/construction.jpg",
+        image: construction,
         url: "#",
     },
-
     {
         title: "Restaurant Website",
         category: "Website Design",
         description:
-            "Elegant online menu and reservation experience.",
+            "Responsive restaurant website with an engaging digital menu experience.",
         technologies: [
             "React",
             "TypeScript",
-            "UI/UX"
+            "UI/UX",
         ],
-        image: "/portfolio/restaurant.jpg",
+        image: restaurant,
         url: "#",
     },
-
     {
         title: "Law Firm",
         category: "Corporate Website",
         description:
-            "Professional redesign focused on trust and conversion.",
+            "Professional redesign focused on credibility and client acquisition.",
         technologies: [
             "Branding",
-            "SEO"
+            "SEO",
         ],
-        image: "/portfolio/law.jpg",
+        image: lawFirm,
         url: "#",
-    }
+    },
 ];
