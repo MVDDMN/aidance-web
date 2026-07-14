@@ -1,41 +1,66 @@
-import Button from "../common/Button";
+import { useEffect, useState } from "react";
+
+import { siteConfig } from "../../config";
 import { navigation } from "../../config/navigation";
-import { siteConfig } from "../../config/site";
+
+import Hamburger from "../navigation/Hamburger";
+import MobileMenu from "../navigation/MobileMenu";
 
 export default function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? "hidden" : "";
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [menuOpen]);
+
     return (
-        <header className="navbar">
-            <div className="navbar-container">
+        <>
+            <header className="navbar">
+                <div className="navbar-container">
+                    {/* Logo */}
 
-                <a className="logo">
+                    <a
+                        href="#home"
+                        className="logo"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        {siteConfig.company.name}
+                    </a>
 
-                    {siteConfig.company.name}
+                    {/* Desktop Navigation */}
 
-                </a>
-
-                <nav>
-
-                    <ul className="nav-links">
-
+                    <nav className="nav-links">
                         {navigation.map((item) => (
-                            <li key={item.href}>
-
-                                <a href={item.href}>
-                                    {item.label}
-                                </a>
-
-                            </li>
+                            <a
+                                key={item.label}
+                                href={item.href}
+                            >
+                                {item.label}
+                            </a>
                         ))}
+                    </nav>
 
-                    </ul>
+                    
 
-                </nav>
+                    {/* Mobile Hamburger */}
 
-                <Button>
-                    Get Started
-                </Button>
+                    <Hamburger
+                        open={menuOpen}
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                    />
+                </div>
+            </header>
 
-            </div>
-        </header>
+            {/* Mobile Drawer */}
+
+            <MobileMenu
+                open={menuOpen}
+                onClose={() => setMenuOpen(false)}
+            />
+        </>
     );
 }

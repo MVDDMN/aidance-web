@@ -296,7 +296,7 @@ PROCESS TIMELINE
     border-radius: 50%;
     background: var(--primary);
     filter: blur(180px);
-    opacity: .08;
+    opacity: .02;
 }
 
 .timeline {
@@ -544,7 +544,7 @@ CONTACT
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.55rem;
 }
 
 .contact-form input,
@@ -556,7 +556,7 @@ CONTACT
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
-    color: var(--text-primary);
+    color:var(--text);
     font: inherit;
     transition: .3s ease;
 }
@@ -574,9 +574,11 @@ CONTACT
 .contact-form textarea {
     resize: vertical;
     min-height: 180px;
+    resize: none;
 }
 
 .contact-form button {
-    margin-top: .5rem;
+    margin-top: .10rem;
+    width: 100%;
     align-self: flex-start;
 }
