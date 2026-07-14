@@ -1,49 +1,131 @@
+import { motion } from "framer-motion";
+
 import Section from "../common/Section";
-import Button from "../common/Button";
+import { fadeUp, staggerContainer, staggerItem, slideRight } from "../../animations";
 
 export default function Hero() {
     return (
         <Section id="home">
-            <div className="hero">
-                <div className="hero-content">
-                    <span className="hero-badge">
-                        Digital Marketing • Web Design • Growth
-                    </span>
-                    
-                    <h1>
-                        Helping Businesses Grow
-                        <span className="gradient-text"> With Modern Websites</span>
-                    </h1>
 
-                    <p>
-                        We create responsive, high-converting websites that strengthen
-                        your brand, improve your online presence, and turn visitors into
-                        loyal customers.
-                    </p>
+            <motion.div
+                className="hero"
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+            >
 
-                    <div className="hero-actions">
-                        <Button>Get Started</Button>
+                {/* LEFT */}
 
-                        <Button variant="secondary">
+                <motion.div
+                    className="hero-content"
+                    variants={fadeUp}
+                >
+
+                    <motion.span
+                        className="hero-tag"
+                        variants={staggerItem}
+                    >
+                        DIGITAL MARKETING SOLUTIONS
+                    </motion.span>
+
+                    <motion.h1 variants={staggerItem}>
+                        Modern Websites
+                        <br />
+                        That Grow
+                        <span className="gradient-text">
+                            {" "}Businesses
+                        </span>
+                    </motion.h1>
+
+                    <motion.p variants={staggerItem}>
+                        We craft high-performing websites that combine
+                        modern design, seamless user experience,
+                        and digital strategy to help businesses
+                        generate more leads and build stronger brands.
+                    </motion.p>
+
+                    <motion.div
+                        className="hero-actions"
+                        variants={staggerItem}
+                    >
+
+                        <motion.a
+                            href="#contact"
+                            className="btn btn-primary"
+                            whileHover={{
+                                y: -3,
+                                scale: 1.03,
+                            }}
+                            whileTap={{
+                                scale: .97,
+                            }}
+                        >
+                            Start Your Project
+                        </motion.a>
+
+                        <motion.a
+                            href="#portfolio"
+                            className="btn btn-secondary"
+                            whileHover={{
+                                y: -3,
+                                scale: 1.03,
+                            }}
+                            whileTap={{
+                                scale: .97,
+                            }}
+                        >
                             View Portfolio
-                        </Button>
-                    </div>
-                </div>
+                        </motion.a>
 
-                <div className="hero-visual">
-                    <div className="browser-window">
-                        <div className="browser-top">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    </motion.div>
+
+                </motion.div>
+
+                {/* RIGHT */}
+
+                <motion.div
+                    className="hero-visual"
+                    variants={slideRight}
+                    animate={{
+                        y: [0, -12, 0],
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                >
+
+                    <div className="hero-window">
+
+                        <div className="window-top">
+
+                            <span />
+
+                            <span />
+
+                            <span />
+
                         </div>
 
-                        <div className="browser-body">
-                            <div className="website-preview"></div>
+                        <div className="window-content">
+
+                            <div className="hero-chart" />
+
+                            <div className="hero-card one" />
+
+                            <div className="hero-card two" />
+
+                            <div className="hero-card three" />
+
                         </div>
+
                     </div>
-                </div>
-            </div>
+
+                </motion.div>
+
+            </motion.div>
+
         </Section>
     );
 }
