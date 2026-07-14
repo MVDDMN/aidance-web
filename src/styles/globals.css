@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -106,10 +107,12 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
 }
 
 p {
+    font-size: clamp(1rem, 1vw, 1.1rem);
+    line-height: 1.8;
     color: var(--text-secondary);
 }
 
