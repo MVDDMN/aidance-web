@@ -13,19 +13,41 @@ export default function ProcessStep({
     description,
     icon: Icon,
 }: ProcessStepProps) {
+
     return (
-        <div className="process-node">
+
+        <article className="process-node">
+
             <div className="process-circle">
-                <Icon size={28} />
+
+                <Icon size={30} />
+
             </div>
 
-            <span className="process-step-number">
-                {step}
-            </span>
+            <div className="process-content">
 
-            <h3>{title}</h3>
+                <span className="process-step-number">
 
-            <p>{description}</p>
-        </div>
+                    {step}
+
+                </span>
+
+                <h3>
+
+                    {title}
+
+                </h3>
+
+                <p>
+
+                    {description}
+
+                </p>
+
+            </div>
+
+        </article>
+
     );
+
 }

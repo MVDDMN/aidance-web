@@ -1,5 +1,8 @@
 import Heading from "../common/Heading";
 import Section from "../common/Section";
+import { motion } from "framer-motion";
+import { staggerContainer } from "../../animations";
+import { AnimatedCard, AnimatedSection } from "../motion";
 
 import { services } from "../../data/services";
 
@@ -9,39 +12,44 @@ export default function Services() {
 
     return (
 
-        <Section id="services">
 
-            <Heading
+        <AnimatedSection >
+            <Section id="services">
 
-                center
+                <Heading
 
-                title="What We Do"
+                    center
 
-                subtitle="Professional digital solutions that help businesses grow online."
+                    title="What We Do"
 
-            />
+                    subtitle="Professional digital solutions that help businesses grow online."
 
-            <div className="services-grid">
+                />
 
-                {
+                <motion.div
+                    className="services-grid"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
 
-                    services.map((service) => (
+                    {
 
-                        <ServiceCard
+                        services.map((service) => (
 
-                            key={service.title}
+                            <AnimatedCard key={service.title}>
+                                <ServiceCard {...service} />
+                            </AnimatedCard>
 
-                            {...service}
+                        ))
 
-                        />
+                    }
 
-                    ))
+                </motion.div>
 
-                }
-
-            </div>
-
-        </Section>
+            </Section>
+        </AnimatedSection>
 
     );
 
