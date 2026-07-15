@@ -5,7 +5,7 @@
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(14px);
-    background: rgba(5, 8, 22, .72);
+    background: #111844;
     border-bottom: 1px solid var(--border);
 }
 
@@ -19,10 +19,57 @@
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: "Poppins";
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.logo-image {
+
+    height: 60px;
+
+    width: auto;
+
+    flex-shrink: 0;
+
+}
+
+.logo-text-wrapper {
+
+    width: 90px;
+    /* Reserve the space permanently */
+    overflow: hidden;
+
+}
+
+.logo-text {
+
+    display: inline-block;
+
     color: white;
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    opacity: 0;
+
+    transform: translateX(-100px);
+
+    transition:
+        opacity .35s ease,
+        transform 1s ease;
+
+}
+
+.logo:hover .logo-text {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
 }
 
 .nav-links {
@@ -31,23 +78,76 @@
 }
 
 .nav-links a {
+
+    position: relative;
+
     color: var(--text-secondary);
-    transition: .25s;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(90deg,
+            var(--primary),
+            var(--accent));
+
+    transform: translateX(-50%);
+
+    transition: width .3s ease;
+
 }
 
 .nav-links a:hover {
+
     color: white;
+
+    transform: translateY(-2px);
+
+}
+
+.nav-links a:hover::after {
+
+    width: 100%;
+
+}
+
+.nav-links a.active {
+
+    color: white;
+
+}
+
+.nav-links a.active::after {
+
+    width: 100%;
+
 }
 
 .hamburger {
-
     display: none;
     background: none;
     border: none;
     color: var(--text);
     cursor: pointer;
     z-index: 1001;
-
 }
 
 /* ===========================
@@ -57,7 +157,7 @@
 .footer {
     margin-top: 8rem;
     padding-top: 5rem;
-    background: #08111f;
+    background: #1b1335;
     border-top: 1px solid var(--border);
 }
 
@@ -100,6 +200,72 @@
     border-top: 1px solid var(--border);
     color: var(--text-secondary);
     font-size: .9rem;
+}
+
+.footer-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.25rem;
+
+}
+
+.footer-brand-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+.footer-logo {
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: contain;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+
+}
+
+.footer-logo:hover {
+
+    transform: scale(1.05);
+
+    filter: drop-shadow(0 0 18px rgba(79, 70, 229, .25));
+
+}
+
+.footer-brand-name {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+    letter-spacing: -.02em;
+
+    margin: 0;
+
+}
+
+.footer-brand p {
+
+    max-width: 320px;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+
 }
 
 /* ===========================

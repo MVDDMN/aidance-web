@@ -24,12 +24,12 @@ body {
     font-family: "Inter", sans-serif;
     background:
         radial-gradient(circle at top right,
-            rgba(91, 95, 255, .18),
+            rgb(26, 34, 82),
             transparent 45%),
 
         radial-gradient(circle at bottom left,
-            rgba(56, 189, 248, .15),
-            transparent 40%),
+            rgb(29, 17, 63),
+            transparent 15%),
 
         #050816;
     color: #ffffff;
@@ -62,19 +62,19 @@ ul {
 =========================== */
 
 :root {
-    --background: #050816;
-    --surface: #0f172a;
-    --surface-hover: #172554;
+    --background: #23307c;
+    --surface: #0c134b;
+    --surface-hover: #192257;
 
-    --primary: #5b5fff;
-    --primary-hover: #4b4ee6;
+    --primary: #aa195f;
+    --primary-hover: #AE76A6;
 
-    --accent: #38bdf8;
+    --accent: #ff057a;
 
     --text: #ffffff;
-    --text-secondary: #94a3b8;
+    --text-secondary: #E9ECF5;
 
-    --border: rgba(255, 255, 255, 0.08);
+    --border: rgba(48, 15, 15, 0.08);
 
     --container-width: 1200px;
 
