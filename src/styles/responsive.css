@@ -115,7 +115,7 @@
 
     .testimonial-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
     }
 
@@ -126,6 +126,8 @@
     .contact-grid {
 
         grid-template-columns: 1fr;
+
+        gap: 3rem;
 
     }
 
@@ -230,6 +232,52 @@ Mobile
     .stats-grid {
 
         grid-template-columns: 1fr;
+
+    }
+
+    /* ===========================
+        Testimonials
+    =========================== */
+    .testimonial-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .testimonial-card {
+
+        min-height: auto;
+
+    }
+
+    .testimonial-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1.5rem;
+
+    }
+
+    .company-logo {
+
+        width: 50px;
+
+    }
+
+    /* ===========================
+        Contact
+    =========================== */
+    .input-group {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .contact-form button {
+
+        width: 100%;
 
     }
 

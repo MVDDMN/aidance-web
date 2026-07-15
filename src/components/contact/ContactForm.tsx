@@ -1,45 +1,68 @@
 export default function ContactForm() {
+
     return (
+
         <form className="contact-form">
 
-            <input
-                type="text"
-                placeholder="Your Name"
-            />
+            <div className="input-group">
+
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                />
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                />
+
+            </div>
 
             <input
-                type="email"
-                placeholder="Email Address"
-            />
-
-            <input
                 type="text"
-                placeholder="Company"
+                placeholder="Company Name"
             />
 
             <select defaultValue="">
-                <option value="" disabled>
-                    Select a Service
+
+                <option
+                    value=""
+                    disabled
+                >
+                    Select Service
                 </option>
 
                 <option>Website Design</option>
+
                 <option>Website Redesign</option>
+
+                <option>Landing Page</option>
+
                 <option>SEO Optimization</option>
+
                 <option>Website Maintenance</option>
+
             </select>
 
             <textarea
-                rows={6}
-                placeholder="Tell us about your project..."
+
+                rows={7}
+
+                placeholder="Tell us about your business and project..."
+
             />
 
             <button
+                className="btn btn-primary"
                 type="submit"
-                className="btn"
             >
+
                 Start Your Project
+
             </button>
 
         </form>
+
     );
+
 }
