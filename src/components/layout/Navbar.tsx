@@ -6,6 +6,7 @@ import Hamburger from "../navigation/Hamburger";
 import MobileMenu from "../navigation/MobileMenu";
 
 import logo from "../../assets/logos/logo.png";
+import logoHover from "../../assets/logos/logo2.png";
 
 export default function Navbar() {
 
@@ -37,11 +38,21 @@ export default function Navbar() {
                         onClick={() => setMenuOpen(false)}
                     >
 
-                        <img
-                            src={logo}
-                            alt="Aidance"
-                            className="logo-image"
-                        />
+                        <div className="logo-images">
+
+                            <img
+                                src={logo}
+                                alt="Aidance"
+                                className="logo-image logo-default"
+                            />
+
+                            <img
+                                src={logoHover}
+                                alt="Aidance"
+                                className="logo-image logo-hover"
+                            />
+
+                        </div>
 
                         <div className="logo-text-wrapper">
 

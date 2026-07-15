@@ -26,20 +26,71 @@
 
 }
 
-.logo-image {
+.logo-images {
 
-    height: 60px;
+    position: relative;
 
-    width: auto;
+    width: 52px;
+
+    height: 52px;
 
     flex-shrink: 0;
 
 }
 
+.logo-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+}
+
+.logo-default {
+
+    opacity: 1;
+
+    transform: rotate(0deg);
+
+}
+
+.logo-hover {
+
+    opacity: 0;
+
+    transform: rotate(90deg) scale(.9);
+
+}
+
+.logo:hover .logo-default {
+
+    opacity: 0;
+
+    transform: rotate(-8deg) scale(.9);
+
+}
+
+.logo:hover .logo-hover {
+
+    opacity: 1;
+
+    transform: rotate(0deg) scale(1.05);
+
+}
+
 .logo-text-wrapper {
 
-    width: 90px;
-    /* Reserve the space permanently */
+    width: 120px;
     overflow: hidden;
 
 }
@@ -53,6 +104,8 @@
     font-size: 1.15rem;
 
     font-weight: 700;
+
+    margin-left: 0.5rem;
 
     opacity: 0;
 
