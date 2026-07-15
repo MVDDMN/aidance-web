@@ -172,6 +172,12 @@ Mobile
         display: none;
     }
 
+    .logo-image {
+
+        height: 42px;
+
+    }
+
     /* ===========================
         Process
     =========================== */
@@ -278,6 +284,32 @@ Mobile
     .contact-form button {
 
         width: 100%;
+
+    }
+
+    /* ===========================
+        Footer
+    =========================== */
+
+    .footer-brand {
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+    .footer-brand-header {
+
+        justify-content: center;
+
+    }
+
+    .footer-logo {
+
+        width: 120px;
+
+        height: 120px;
 
     }
 
