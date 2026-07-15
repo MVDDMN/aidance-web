@@ -10,9 +10,11 @@ HERO
 
     align-items: center;
 
-    gap: 6rem;
+    gap: clamp(2rem, 5vw, 5rem);
 
     min-height: calc(100vh - 90px);
+
+    padding-block: 4rem;
 
 }
 
@@ -34,7 +36,7 @@ HERO
 
     border-radius: 999px;
 
-    background: rgba(79, 70, 229, .12);
+    background: var(--surface-hover);
 
     color: var(--primary);
 
@@ -48,7 +50,9 @@ HERO
 
 .hero h1 {
 
-    line-height: 1.05;
+    font-size: clamp(3rem, 5vw, 5rem);
+
+    line-height: .95;
 
     max-width: 650px;
 
@@ -57,10 +61,10 @@ HERO
 .gradient-text {
 
     background: linear-gradient(90deg,
-            #4F46E5,
-            #7C3AED,
-            #2563EB,
-            #4F46E5);
+            #993955,
+            #AE76A6,
+            #A3C3D9,
+            #CCD6EB);
 
     background-size: 300%;
 
@@ -104,7 +108,7 @@ HERO
 
     width: 100%;
 
-    max-width: 560px;
+    max-width: 520px;
 
     border-radius: 22px;
 
@@ -162,7 +166,7 @@ HERO
 
     position: relative;
 
-    height: 380px;
+    height: 340px;
 
     padding: 2rem;
 

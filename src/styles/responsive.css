@@ -51,7 +51,7 @@
     }
 
     .hero-visual {
-        order: -1;
+        order: 1;
     }
 
     .hero-window {
@@ -172,9 +172,23 @@ Mobile
         display: none;
     }
 
-    .logo-image {
+    .logo {
 
-        height: 42px;
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+    .logo-images {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
 
     }
 
