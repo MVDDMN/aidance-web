@@ -12,7 +12,7 @@ HERO
 
     gap: clamp(2rem, 5vw, 5rem);
 
-    min-height: calc(100vh - 90px);
+    min-height: calc(80vh - 70px);
 
     padding-block: 4rem;
 
