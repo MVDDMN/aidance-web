@@ -10,7 +10,7 @@ export const siteConfig = {
     },
 
     contact: {
-        email: "hello@aidanceagency.com",
+        email: "aidanceagency@gmail.com",
 
         phone: "+63 912 345 6789",
 
