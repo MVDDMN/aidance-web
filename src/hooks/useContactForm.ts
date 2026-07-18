@@ -4,20 +4,21 @@ import type { ContactFormData } from "../types/Contact";
 
 export function useContactForm() {
 
-    const [form, setForm] =
-        useState<ContactFormData>({
+    const [form, setForm] = useState<ContactFormData>({
 
-            name: "",
+        name: "",
 
-            email: "",
+        email: "",
 
-            company: "",
+        company: "",
 
-            service: "",
+        service: "",
 
-            message: "",
+        message: "",
 
-        });
+        website: "",
+
+    });
 
     const [loading, setLoading] =
         useState(false);

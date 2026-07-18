@@ -6,6 +6,10 @@ import { validateContactForm } from "../../utils/validator";
 
 import { sendContactEmail } from "../../services/email";
 
+import type { EmailJSError } from "../../services/email";
+
+import { AnimatePresence, motion } from "framer-motion";
+
 export default function ContactForm() {
 
     const {
@@ -49,19 +53,34 @@ export default function ContactForm() {
     }
 
     async function handleSubmit(
-        e: FormEvent
+        e: FormEvent<HTMLFormElement>
     ) {
 
         e.preventDefault();
 
         setError("");
 
-        const validation =
-            validateContactForm(form);
+        // Honeypot check
+        if ((form.website ?? "").trim()) {
+
+            console.warn("Spam submission blocked.");
+
+            return;
+
+        }
+
+        // Validation
+        const validation = validateContactForm(form);
 
         if (validation) {
 
             setError(validation);
+
+            setTimeout(() => {
+
+                setError("");
+
+            }, 4000);
 
             return;
 
@@ -87,6 +106,8 @@ export default function ContactForm() {
 
                 message: "",
 
+                website: ""
+
             });
 
             setTimeout(() => {
@@ -97,11 +118,23 @@ export default function ContactForm() {
 
         }
 
-        catch {
+        catch (err: unknown) {
+
+            const emailError = err as EmailJSError;
+
+            console.error(emailError.status);
+
+            console.error(emailError.text);
 
             setError(
-                "Something went wrong. Please try again."
+                "We couldn't send your message. Please try again or email us directly."
             );
+
+            setTimeout(() => {
+
+                setError("");
+
+            }, 4000);
 
         }
 
@@ -115,9 +148,10 @@ export default function ContactForm() {
 
     return (
 
-        <form
+        <motion.form
             className="contact-form"
             onSubmit={handleSubmit}
+            layout
         >
 
             <div className="input-group">
@@ -192,33 +226,80 @@ export default function ContactForm() {
 
             />
 
-            {error && (
+            <AnimatePresence mode="wait">
 
-                <p className="form-error">
+                {error && (
 
-                    {error}
+                    <motion.div
+                        key="error"
+                        className="form-message form-error"
+                        initial={{
+                            opacity: 0,
+                            height: 0,
+                            y: -10,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            height: "auto",
+                            y: 0,
+                        }}
+                        exit={{
+                            opacity: 0,
+                            height: 0,
+                            y: -10,
+                        }}
+                        transition={{
+                            duration: .35,
+                            ease: "easeOut",
+                        }}
+                    >
 
-                </p>
+                        {error}
 
-            )}
+                    </motion.div>
 
-            {success && (
+                )}
 
-                <p className="form-success">
+                {!error && success && (
 
-                    Message sent successfully!
+                    <motion.div
+                        key="success"
+                        className="form-message form-success"
+                        initial={{
+                            opacity: 0,
+                            height: 0,
+                            y: -10,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            height: "auto",
+                            y: 0,
+                        }}
+                        exit={{
+                            opacity: 0,
+                            height: 0,
+                            y: -10,
+                        }}
+                        transition={{
+                            duration: .35,
+                            ease: "easeOut",
+                        }}
+                    >
 
-                </p>
+                        ✓ Message sent successfully!
 
-            )}
+                    </motion.div>
+
+                )}
+
+            </AnimatePresence>
 
             <button
-
                 className="btn btn-primary"
-
                 disabled={loading}
-
             >
+
+                {loading && <span className="button-spinner" />}
 
                 {loading
                     ? "Sending..."
@@ -226,7 +307,17 @@ export default function ContactForm() {
 
             </button>
 
-        </form>
+            <input
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={handleChange}
+                autoComplete="off"
+                className="visually-hidden"
+                tabIndex={-1}
+            />
+
+        </motion.form>
 
     );
 

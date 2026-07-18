@@ -26,48 +26,45 @@ const AUTO_REPLY_TEMPLATE =
 
 emailjs.init(PUBLIC_KEY);
 
-export async function sendContactEmail(
-    data: ContactPayload
-) {
+export async function sendContactEmail(data: ContactPayload) {
 
+    // 1. Send notification to Aidance
     await emailjs.send(
-
         SERVICE_ID,
-
         CONTACT_TEMPLATE,
-
         {
-
             from_name: data.name,
-
             from_email: data.email,
-
             company: data.company,
-
             service: data.service,
-
             message: data.message,
-
         }
-
     );
 
-    await emailjs.send(
+    // 2. Auto reply (non-blocking)
+    try {
 
-        SERVICE_ID,
+        await emailjs.send(
+            SERVICE_ID,
+            AUTO_REPLY_TEMPLATE,
+            {
+                to_name: data.name,
+                to_email: data.email,
+                company: data.company,
+            }
+        );
 
-        AUTO_REPLY_TEMPLATE,
+    } catch (err) {
 
-        {
+        console.warn("Auto reply failed:", err);
 
-            to_name: data.name,
+    }
 
-            to_email: data.email,
+}
+export interface EmailJSError {
 
-            company: data.company,
+    status: number;
 
-        }
-
-    );
+    text: string;
 
 }
