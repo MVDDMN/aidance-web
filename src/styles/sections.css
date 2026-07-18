@@ -1076,16 +1076,15 @@ CONTACT
 }
 
 .contact-form input:focus,
-
 .contact-form textarea:focus,
-
 .contact-form select:focus {
-
-    outline: none;
 
     border-color: var(--primary);
 
-    box-shadow: 0 0 0 4px rgba(79, 70, 229, .12);
+    box-shadow:
+        0 0 0 4px rgba(79,70,229,.18);
+
+    transform: translateY(-2px);
 
 }
 
@@ -1099,21 +1098,67 @@ CONTACT
 
 .form-error {
 
+    display: flex;
+
+    align-items: center;
+
+    gap: .75rem;
+
+    padding: 1rem 1.25rem;
+
+    border-radius: 14px;
+
+    background: rgba(239,68,68,.12);
+
+    border: 1px solid rgba(239,68,68,.3);
+
     color: #ef4444;
 
-    font-size: .9rem;
+    animation: shake .35s ease;
 
-    margin-top: -.25rem;
+}
+
+@keyframes shake {
+
+    0%,100% {
+
+        transform: translateX(0);
+
+    }
+
+    25% {
+
+        transform: translateX(-4px);
+
+    }
+
+    75% {
+
+        transform: translateX(4px);
+
+    }
 
 }
 
 .form-success {
 
+    display: flex;
+
+    align-items: center;
+
+    gap: .75rem;
+
+    padding: 1rem 1.25rem;
+
+    border-radius: 14px;
+
+    background: rgba(34,197,94,.12);
+
+    border: 1px solid rgba(34,197,94,.3);
+
     color: #22c55e;
 
-    font-size: .9rem;
-
-    margin-top: -.25rem;
+    animation: fadeUp .4s ease;
 
 }
 
@@ -1122,5 +1167,93 @@ CONTACT
     opacity: .7;
 
     cursor: not-allowed;
+
+}
+
+.button-spinner {
+
+    width: 18px;
+
+    height: 18px;
+
+    border: 2px solid rgba(255,255,255,.35);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: buttonSpin .8s linear infinite;
+
+}
+
+@keyframes buttonSpin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+.visually-hidden {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+
+}
+
+.form-message {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    padding: 1rem 1.25rem;
+
+    margin-top: 1rem;
+
+    font-size: .95rem;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+}
+
+.form-error {
+
+    color: #ef4444;
+
+    background: rgba(239, 68, 68, .12);
+
+    border: 1px solid rgba(239, 68, 68, .25);
+
+}
+
+.form-success {
+
+    color: #22c55e;
+
+    background: rgba(34, 197, 94, .12);
+
+    border: 1px solid rgba(34, 197, 94, .25);
 
 }

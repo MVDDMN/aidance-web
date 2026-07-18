@@ -10,4 +10,6 @@ export interface ContactFormData {
 
     message: string;
 
+    website: string;
+
 }
