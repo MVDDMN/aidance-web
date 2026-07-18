@@ -1096,3 +1096,31 @@ CONTACT
     width: fit-content;
 
 }
+
+.form-error {
+
+    color: #ef4444;
+
+    font-size: .9rem;
+
+    margin-top: -.25rem;
+
+}
+
+.form-success {
+
+    color: #22c55e;
+
+    font-size: .9rem;
+
+    margin-top: -.25rem;
+
+}
+
+.contact-form button:disabled {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+}
