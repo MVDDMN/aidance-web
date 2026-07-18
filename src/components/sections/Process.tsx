@@ -44,16 +44,17 @@ export default function Process() {
                     <motion.div
                         className="timeline-line"
                         initial={{
-                            scaleX: 0,
+                            scaleY: 0,
                         }}
                         whileInView={{
-                            scaleX: 1,
+                            scaleY: 1,
                         }}
                         viewport={{
                             once: true,
+                            amount: 0.3,
                         }}
                         transition={{
-                            duration: 1.3,
+                            duration: 3,
                             ease: "easeOut",
                         }}
                     />
