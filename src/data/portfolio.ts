@@ -1,9 +1,5 @@
 import type { Portfolio } from "../types/Portfolio";
 
-import construction from "../assets/portfolio/construction.webp";
-import restaurant from "../assets/portfolio/restaurant.webp";
-import lawFirm from "../assets/portfolio/law-firm.webp";
-
 export const portfolio: Portfolio[] = [
     {
         title: "Construction Company",
@@ -15,7 +11,7 @@ export const portfolio: Portfolio[] = [
             "SEO",
             "Responsive",
         ],
-        image: construction,
+
         url: "#",
     },
     {
@@ -28,7 +24,7 @@ export const portfolio: Portfolio[] = [
             "TypeScript",
             "UI/UX",
         ],
-        image: restaurant,
+
         url: "#",
     },
     {
@@ -40,7 +36,7 @@ export const portfolio: Portfolio[] = [
             "Branding",
             "SEO",
         ],
-        image: lawFirm,
+
         url: "#",
     },
 ];

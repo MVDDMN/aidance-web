@@ -2,6 +2,9 @@ import { Star, ExternalLink, Quote } from "lucide-react";
 
 import { motion } from "framer-motion";
 
+import defaultProfileImage from "../../assets/testimonials/profile/defaultProfile.webp"; 
+import defaultCompanyImage from "../../assets/testimonials/logos/defaultCompany.webp";
+
 interface Props {
 
     name: string;
@@ -84,8 +87,24 @@ export default function TestimonialCard({
                 <div className="testimonial-profile">
 
                     <img
-                        src={avatar}
+                        src={avatar || defaultProfileImage}
                         alt={name}
+                        loading="lazy"
+                        onError={(e) => {
+
+                            const target =
+                                e.currentTarget;
+
+                            if (
+                                target.src !== defaultProfileImage
+                            ) {
+
+                                target.src =
+                                    defaultProfileImage;
+
+                            }
+
+                        }}
                     />
 
                     <div>
@@ -113,11 +132,27 @@ export default function TestimonialCard({
                 </div>
 
                 {companyLogo && (
-
+                
                     <img
-                        className="company-logo"
-                        src={companyLogo}
+                        className="company-logo-image"
+                        src={companyLogo || defaultCompanyImage}
                         alt={company}
+                        loading="lazy"
+                        onError={(e) => {
+
+                            const target =
+                                e.currentTarget;
+
+                            if (
+                                target.src !== defaultCompanyImage
+                            ) {
+
+                                target.src =
+                                    defaultCompanyImage;
+
+                            }
+
+                        }}
                     />
 
                 )}

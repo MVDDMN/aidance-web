@@ -1,5 +1,6 @@
 import Card from "../common/Card";
 import BrowserFrame from "../common/BrowserFrame";
+import defaultProjectImage from "../../assets/portfolio/default.webp";
 
 interface Props {
     title: string;
@@ -30,8 +31,24 @@ export default function PortfolioCard({
                 <div className="portfolio-image">
 
                     <img
-                        src={image}
+                        src={image || defaultProjectImage}
                         alt={title}
+                        loading="lazy"
+                        onError={(e) => {
+
+                            const target =
+                                e.currentTarget;
+
+                            if (
+                                target.src !== defaultProjectImage
+                            ) {
+
+                                target.src =
+                                    defaultProjectImage;
+
+                            }
+
+                        }}
                     />
 
                 </div>
