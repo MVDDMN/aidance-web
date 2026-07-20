@@ -1,12 +1,7 @@
 import type { Testimonial } from "../types/Testimonial";
 
-import sarah from "../assets/testimonials/sarah.webp";
-import michael from "../assets/testimonials/michael.webp";
-import amanda from "../assets/testimonials/amanda.webp";
+import defaultLogo from "../assets/testimonials/logos/defaultCompany.webp";
 
-import constructionLogo from "../assets/testimonials/logos/construction.webp";
-import restaurantLogo from "../assets/testimonials/logos/restaurant.webp";
-import lawLogo from "../assets/testimonials/logos/lawfirm.webp";
 
 export const testimonials: Testimonial[] = [
     {
@@ -20,11 +15,9 @@ export const testimonials: Testimonial[] = [
 
         rating: 5,
 
-        avatar: sarah,
-
-        companyLogo: constructionLogo,
-
         website: "https://construction.com",
+
+        companyLogo: defaultLogo
     },
 
     {
@@ -39,9 +32,7 @@ export const testimonials: Testimonial[] = [
 
         rating: 5,
 
-        avatar: michael,
 
-        companyLogo: restaurantLogo,
     },
 
     {
@@ -56,8 +47,5 @@ export const testimonials: Testimonial[] = [
 
         rating: 5,
 
-        avatar: amanda,
-
-        companyLogo: lawLogo,
     },
 ];

@@ -3,6 +3,6 @@ export interface Portfolio {
     category: string;
     description: string;
     technologies: string[];
-    image: string;
+    image?: string;
     url: string;
 }
